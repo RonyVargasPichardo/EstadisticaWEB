@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./porcentajes.css">
+    <title>Estadistica WEB | Colegio los Amiguitos</title>
+</head>
+<body>
+    <header>
+        <h2>Porcentajes y Descuentos</h2>
+       
+    </header>
+    <main>
+        <section class="container-calcular-precio">
+            <h3>Calcular el Precio con descuento de un producto</h3>
+            <form action="">
+                <label for="precio">Escribe los valores de tu producto</label>
+                <label for="precio">Precio</label>
+                <input type="number" name="precio" id="precio">
+                <label for="cupon">Cupon</label>
+                <input type="text" name="cupon" id="cupon">
+                <button type="button" id="btn-calcular" onclick="calcularPrecioConDescuento()">Precio con Descuento</button>
+            </form>
+            <div class="container-valor-precio">
+                <fieldset>
+                    <legend>Result</legend>
+                    <p id="resultPrecio"></p>
+                </fieldset>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <span>By Rony Vargas</span>
+    </footer>
+    
+    <script src="./porcentajes.js"></script>
+</body>
+</html>
