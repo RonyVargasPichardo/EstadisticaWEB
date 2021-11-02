@@ -4,22 +4,86 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size: 62.5%;
+}
+
 body {
+    min-width: 28rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 
-header{
+header {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    min-height: 10vh;
+    height: 10vh;
     background-color:bisque;
-    border-bottom: 2px solid black;
     color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 8px rgba(0,0,0,.6);
 }
+
+
+.wrrap-container-header{
+    border-bottom: 0.2rem solid black;
+    display: flex;
+    background-color: rgb(255, 0, 0);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header__container-logo {
+    padding: .5rem;
+}
+
+
+.header__container-logo img{
+    padding: .2rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 0.3rem solid rgba(254, 254, 255, 0.945);
+}
+
+.header__span{
+    color: white;
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+.main-nav{
+    list-style: none;
+}
+
+.main-nav > li {
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 5rem;
+}
+
+.main-nav > li > a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: white;
+}
+
+.main-nav > li::after{
+    content: "|";
+    color: white;
+}
+
+.main-nav > li:hover, .nav-footer__ul li:hover{
+    background-color: rgba(241, 30, 30, 0.5);
+}
+
+.main-nav > li:active ,.nav-footer__ul li:active{
+    background-color: rgba(255, 255, 255, 0.3);
+} 
 
 main {
     display: flex;
@@ -37,70 +101,74 @@ main {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    flex-basis: 300px;
+    flex-basis: 30rem;
     /* justify-content:space-around; */
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 10px;
-    border: 3px solid black;
+    max-width: 40rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: .3rem solid black;
     background-color: wheat;
     color: rgb(7, 7, 7);
 }
 
 .container-calcular-precio input {
     width: 100%;
-    border-radius: 5px;
-    border: 1px solid rgb(204, 74, 51);
-    padding: 5px;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    border: .1rem solid rgb(204, 74, 51);
+    padding: .5rem;
 }
 
 .container-calcular-precio h3{
     text-align: center;
-    padding-bottom: 5px;
-    border-bottom: 2px solid red;
+    font-size: 2rem;
+    padding-bottom: .5rem;
+    border-bottom: .2rem solid red;
 }
 
 .container-calcular-precio form {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    font-size: 1.5rem;
     justify-content: space-evenly;
-    flex-basis: 250px;
+    flex-basis: 25rem;
     font-weight: bold;
 }
 
 #btn-calcular {
     background-color: rgb(0, 0, 0);
-    font-size: 14px;
+    font-size: 1.4rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 10px;
+    border-radius: 1rem;
     color:rgb(216, 216, 216);
-    padding: 10px;
-    margin-top: 10px;
-    border: 3px solid rgb(92, 67, 67);
+    padding: 1rem;
+    margin-top: 1rem;
+    border: .3rem solid rgb(92, 67, 67);
     font-weight:bold;
 }
 
 .container-valor-precio {
-    flex-basis: 100px;
-    padding: 10px;
+    flex-basis: 10rem;
+    padding: 1rem;
 }
 .container-valor-precio fieldset {
     height: 100%;
-    padding: 10px;
-    border: 3px solid black;
+    padding: 1rem;
+    border: .3rem solid black;
     color: black;
-    border-radius: 10px;
+    font-size: 1.8rem;
+    border-radius: 1rem;
 }
 
 .container-valor-precio > fieldset > legend {
-    padding: 10px;
-    border: 2px solid black;
+    padding: 1rem;
+    border: .2rem solid black;
     border-radius: 50%;
     color: rgb(243, 235, 235);
     font-weight: bold;
     font-family: cursive;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 0, 13);
 }
 
 
@@ -111,9 +179,9 @@ footer {
     align-items: center;
     justify-content: center;
     height: 10vh;
-    background-color:bisque;  
-    color: rgb(0, 0, 0);
-    border-top: 2px solid black;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border-top: .2rem solid black;
     font-weight: bold;
     
 }
