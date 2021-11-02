@@ -79,7 +79,7 @@ main {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 80vh;
+    min-height: 60.1rem;
     justify-content: center;
     align-items: center;
     background-image: url(https://i.imgur.com/MFKPTfQ.jpg);
