@@ -14,6 +14,10 @@ function validarCampos(){
    return (capital.value === '' || meses.value === '' || tasaDeInteres.value === '')
 }
 
+function limpiarCampos(){
+    form.reset();
+}
+
 function CalcularTasaDeInteres(){
     const valorCapital = capital.value;
     const valorMeses = meses.value;
@@ -23,10 +27,11 @@ function CalcularTasaDeInteres(){
     let resultInteres;
 
     if(validoCampos){
-        alert(`Ingresa los datos que faltan`) ;
+        result.innerText = `Ingresa los datos que faltan` ;
     }else{
         resultInteres = interesSimple(+valorCapital, +valorAnios, +valorMeses, +valorTasaInteres);
         result.innerText = `El Interes Simple: ${resultInteres} `;
+        limpiarCampos();
     }
 }
 
@@ -36,6 +41,7 @@ const meses = document.getElementById('meses');
 const anios = document.getElementById('anios');
 const tasaDeInteres = document.getElementById('tasa');
 const result = document.getElementById('resultInteres');
+const form = document.getElementById("formulario");
 
 
 

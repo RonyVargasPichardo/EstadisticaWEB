@@ -3,14 +3,8 @@
 /*Calculando el area y el perimetro de las figuras Geometricas */
 
 
-/* Cuadrado */
-console.group('Cuadrado');
-const perimetroCuadrado = lado => alert(`Los lados del cuadrado miden: ${lado}cm.
-Perimetro: ${lado * 4}cm`);
 
-const areaCuadrado = lado => alert(`Los lados del cuadrado miden: ${lado}cm.
-Area: ${lado * lado}cm^2`);
-console.groupEnd();
+
 
 
 /* Triangulo */
@@ -47,38 +41,47 @@ const AlturaTrianguloIsosceles = (lado1, lado2, base) =>{
 
 
 
-/* Circulo */
-const PI = Math.PI;
-
-console.group('Circulo');       
-const diametroCirculo = radio => radio * 2;
-
-const circunferenciaCirculo = (radio) => {
-    const diametro = diametroCirculo(radio);
-    return alert(`El radio del circulo es: ${radio}cm.
-    Circunferencia: ${Math.floor(diametro * PI)}cm`);
-};
-
-const areaCirculo = (radio) => alert(`El radio del circulo es: ${radio}cm.
-Area: ${Math.floor((radio * radio)* PI)}cm^2`);
-console.groupEnd();
-
 
 
 
 /// calculado el area y perimetro de las figuras geometricas con html integrando JS
 
 //Cuadrado
+const inputCuadrado = document.getElementById('ladoCuadrado');
+const resultCuadrado = document.getElementById("resultCuadrado");
+
 function calcularPerimetroCuadrado(){ 
-    const inputCuadrado = document.getElementById('ladoCuadrado');
     const valueCuadrado = parseInt(inputCuadrado.value);
-    perimetroCuadrado(valueCuadrado);
+    const validoCampos = validarCampos();
+
+    if(validoCampos){
+        resultCuadrado.innerHTML = `Llena los campos vacios.`
+    }
+    else{
+         perimetroCuadrado(valueCuadrado);
+         inputCuadrado.value = "" 
+    }
 }
 function calcularAreaCuadrado(){ 
-    const inputCuadrado = document.getElementById('ladoCuadrado');
-    const valueCuadrado = inputCuadrado.value;
-    areaCuadrado(valueCuadrado);
+    const valueCuadrado = parseInt(inputCuadrado.value);
+    const validoCampos = validarCampos();
+    if(validoCampos){
+        resultCuadrado.innerHTML = `Llena los campos vacios`
+    }
+    else{
+         areaCuadrado(valueCuadrado);
+         inputCuadrado.value = "" 
+    }
 }
+
+function validarCampos(){
+    return (inputCuadrado.value === '')
+ }
+const perimetroCuadrado = lado => resultCuadrado.innerHTML = `Los lados del cuadrado miden: ${lado}cm. y el
+Perimetro: ${lado * 4}cm`
+const areaCuadrado = lado => resultCuadrado.innerHTML =`Los lados del cuadrado miden: ${lado}cm. y el  
+Area: ${lado * lado}cm^2`
+
 
 
 //Triangulo
@@ -99,15 +102,62 @@ function calcularAreaTriangulo(){
 
 
 //Circulo
-function calcularPerimetroCirculo(){ 
-    const inputRadio = parseInt(document.getElementById('radio').value);
+const inputRadio = document.getElementById('radio');
+const resultCirculo = document.getElementById('resultCirculo');
+const PI = Math.PI;
 
-    circunferenciaCirculo(inputRadio);
+function calcularPerimetroCirculo(){ 
+    const valueRadio = parseInt(inputRadio.value);
+    const validoCamposCirculo = validarCamposCirculo();
+
+    if(validoCamposCirculo){
+        resultCirculo.innerHTML = `Llena los campos vacios`
+    }else{
+        circunferenciaCirculo(valueRadio);
+        inputRadio.value = "";
+    }
 }
+function validarCamposCirculo(){
+    return ( inputRadio.value === "")
+}
+      
+const diametroCirculo = radio => radio * 2;
+const circunferenciaCirculo = (radio) => {
+    const diametro = diametroCirculo(radio);
+    return resultCirculo.innerHTML = `El radio del circulo es: ${radio}cm.
+    Circunferencia: ${Math.floor(diametro * PI)}cm`
+};
+
 function calcularAreaCirculo(){ 
-    const inputRadio = parseInt(document.getElementById('radio').value);
-    areaCirculo(inputRadio);
+    const valueRadio = parseInt(inputRadio.value);
+    const validoCamposCirculo = validarCamposCirculo();
+
+    if(validoCamposCirculo){
+        resultCirculo.innerHTML = `Llena los campos vacios`
+    }else{
+        areaCirculo(valueRadio);
+        inputRadio.value = "";
+    }
 }
+const areaCirculo = (radio) => resultCirculo.innerHTML = `El radio del circulo es: ${radio}cm.
+Area: ${Math.floor((radio * radio)* PI)}cm^2`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Triangulo Isosceles

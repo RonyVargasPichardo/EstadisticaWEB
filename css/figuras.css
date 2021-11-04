@@ -136,6 +136,46 @@ label {
     border: .1rem solid black;
 }
 
+.container-valor-figuras {
+    flex-basis: 100px;
+    padding: 1rem;
+    font-size: 2rem;
+}
+.container-valor-figuras fieldset {
+    height: 100%;
+    padding: 10px;
+    border: 3px solid black;
+    color: black;
+    border-radius: 10px;
+}
+
+.container-valor-figuras > fieldset > legend {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 50%;
+    color: rgb(243, 235, 235);
+    font-weight: bold;
+    font-family: cursive;
+    background-color: rgb(255, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 footer{
     background-color: rgb(224, 26, 26);
     color: #fff;

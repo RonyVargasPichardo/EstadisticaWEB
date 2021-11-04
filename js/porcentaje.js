@@ -5,38 +5,36 @@
 //accedo a los input del html y el elemento de resultado
 const result = document.getElementById('resultPrecio');
 const precio = document.getElementById('precio');
-const coupon = document.getElementById('cupon');
+const descuento = document.getElementById('descuento');
 
 // crear un array de objetos de cupones.
-const coupons = [
-    {   name: 'diamante', discount: 50, },
-    {   name: 'oro'     , discount: 25, },
-    {   name: 'plata'   , discount: 15, },
-];
+// const coupons = [
+//     {   name: 'diamante', discount: 50, },
+//     {   name: 'oro'     , discount: 25, },
+//     {   name: 'plata'   , discount: 15, },
+// ];
 
 
 
 //creo funciones para validar mis datos y se cumpla el descuento de los cupones
 function calcularPrecioConDescuento(){
     const precioValue = parseFloat(precio.value);
-    const couponValue = coupon.value;
+    const descuentoValue = descuento.value;
     //arrow function para validar que los cupones sean correctos
-    const isCouponValueValid = coupon => coupon.name === couponValue;
-    const userCoupon = coupons.find(isCouponValueValid);
+    // const isdescuentoValueValid = coupon => coupon.name === couponValue;
+    // const usercoupon = coupons.find(isdescuentoValueValid);
 
     //valido mis datos
-    if(!precioValue || !couponValue){
+    if(!precioValue || !descuentoValue){
         result.innerText = `Ingresa los datos`;
     }
-    else if(!userCoupon){
-        result.innerText = `El cupon '${couponValue}' no es valido`;
-    } 
+    // else if(!userdescuento){
+    //     result.innerText = `El cupon '${descuentoValue}' no es valido`;
+    // } 
     else{
-        const descuento = userCoupon.discount;
-
-        PrecioConDescuento(precioValue, descuento); //llamo a la funcion par calcular
+        PrecioConDescuento(precioValue, descuentoValue); //llamo a la funcion par calcular
         precio.value = '';
-        cupon.value = '';
+        descuento.value = '';
     }
 }
 
