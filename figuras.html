@@ -38,10 +38,28 @@
                 </fieldset>
             </div>
         </section>
+
+        <section class="item3 item">
+            <h2>Circulo</h2>
+            <h3>Escribe cuanto mide el radio de tu Circulo</h3>
+            <form action="">
+                <label for="radio">Radio</label>
+                <input type="number" name="radio" id="radio">
+                <button type="button" class="btn" onclick="calcularPerimetroCirculo()">Calcular Perimetro</button>
+                <button type="button" class="btn" onclick="calcularAreaCirculo()">Calcular Area</button>
+            </form> 
+            <div class="container-valor-figuras">
+                <fieldset>
+                    <legend>Result</legend>
+                    <p id="resultCirculo"></p>
+                </fieldset>
+            </div>
+        </section>
+
         <section class="item2 item">
             <h2>Triangulo</h2>
             <h3>Escribe cuanto miden los lados de tu Triangulo</h3>
-            <form action="">
+            <form id="FormTriangulo" action="">
                 <label for="lado1">Lado A</label>
                 <input type="number" name="lado1" id="lado1">
                 <label for="lado2">Lado B</label>
@@ -60,26 +78,11 @@
                 </fieldset>
             </div> 
         </section>
-        <section class="item3 item">
-            <h2>Circulo</h2>
-            <h3>Escribe cuanto mide el radio de tu Circulo</h3>
-            <form action="">
-                <label for="radio">Radio</label>
-                <input type="number" name="radio" id="radio">
-                <button type="button" class="btn" onclick="calcularPerimetroCirculo()">Calcular Perimetro</button>
-                <button type="button" class="btn" onclick="calcularAreaCirculo()">Calcular Area</button>
-            </form> 
-            <div class="container-valor-figuras">
-                <fieldset>
-                    <legend>Result</legend>
-                    <p id="resultCirculo"></p>
-                </fieldset>
-            </div>
-        </section>
+       
         <section class="item4 item" >
             <h2>Triangulo Isosceles</h2>
             <h3>Escribe cuanto miden los lados de tu Triangulo Isosceles</h3>
-            <form action="">
+            <form id="FormIsosceles" action="">
                 <label for="ladoa">Lado A</label>
                 <input type="number" name="ladoa" id="ladoa">
                 <label for="ladob">Lado B</label>
